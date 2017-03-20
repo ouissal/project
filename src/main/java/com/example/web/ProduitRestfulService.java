@@ -55,18 +55,7 @@ public class ProduitRestfulService {
 				.build();
 	}
 
-	@PUT
-	@Path("/{id}")
-	@Consumes(MediaType.APPLICATION_JSON)
-	public Response update(@PathParam("id") Long id, Produit p) {
-		//prck l'id on l'envoit sous le format d'un path param et pas dans la requete
-		p.setId(id);
-		produitRepository.save(p);
-		
-		return Response.ok()
-				.build();
-	}
-	
+
 	@DELETE
 	@Path("{id}")
 	public Response delete(@PathParam("id") Long id) {
